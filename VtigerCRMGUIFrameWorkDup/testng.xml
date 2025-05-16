@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test_Vtiger">
+		<packages>
+			<package name="com.vtiger.crm.ContactTest"></package>
+			<package name="com.vtiger.crm.OpportunityTest"></package>
+			<package name="com.vtiger.crm.OrgTest"></package>
+			<package name="com.vtiger.crm.PurchaseOrderTest"></package>
+			<package name="com.vtiger.crm.ContactTest"></package>
+			<package name="com.vtiger.crm.ServicesTest"></package>
+		</packages>
+	</test> <!-- Test_Vtiger -->
+</suite> <!-- Suite -->
