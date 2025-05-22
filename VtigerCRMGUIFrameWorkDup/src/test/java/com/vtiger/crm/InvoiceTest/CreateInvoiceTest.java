@@ -2,8 +2,11 @@ package com.vtiger.crm.InvoiceTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+import com.vtiger.crm.ListenerUtility.ListenerImpClass;
 import com.vtiger.crm.ObjectRepositoryUtility.ContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateInvoicePage;
@@ -11,7 +14,6 @@ import com.vtiger.crm.ObjectRepositoryUtility.CreateOrganizationPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateProductPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreatePurchaseOrderPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateVendorPage;
-import com.vtiger.crm.ObjectRepositoryUtility.HomePage;
 import com.vtiger.crm.ObjectRepositoryUtility.InvoiceInfoPage;
 import com.vtiger.crm.ObjectRepositoryUtility.InvoicePage;
 import com.vtiger.crm.ObjectRepositoryUtility.OrganizationPage;
@@ -20,15 +22,16 @@ import com.vtiger.crm.ObjectRepositoryUtility.PurchaseOrderInfoPage;
 import com.vtiger.crm.ObjectRepositoryUtility.PurchaseOrderPage;
 import com.vtiger.crm.ObjectRepositoryUtility.VendorsPage;
 import com.vtiger.crm.generic.BaseUtility.BaseClass;
+import com.vtiger.crm.generic.webdriverutility.UtilityClassObject;
 
 import junit.framework.Assert;
-
+@Listeners(ListenerImpClass.class)
 public class CreateInvoiceTest extends BaseClass {
 
-	@Test
+	@Test(groups={"Regression_Test"})
 	public void createInvoicewithPO_SO() throws Exception{
 		
-		//get data from excel
+		UtilityClassObject.getTest().log(Status.INFO,"Read data from the excel");
 		String OrgName=excel.getDataFromExcelFile("Invoice", 1, 5)+ java.getRandomNumber();
 		String LastName=excel.getDataFromExcelFile("Invoice", 1, 3)+java.getRandomNumber();
 		String Product=excel.getDataFromExcelFile("Invoice", 1, 6)+java.getRandomNumber();
@@ -46,7 +49,7 @@ public class CreateInvoiceTest extends BaseClass {
 		String Inv_Shipping=excel.getDataFromExcelFile("Invoice", 1, 8);
 		String Inv_Qty=excel.getDataFromExcelFile("Invoice", 1, 11);
 		
-		//login to application
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the application");
 		web.waitForImplicit(driver);
 		web.maximize(driver);
 		
@@ -65,15 +68,15 @@ public class CreateInvoiceTest extends BaseClass {
 		CreateInvoicePage createInvoice=new CreateInvoicePage(driver);
 		InvoiceInfoPage invoiceInfo=new InvoiceInfoPage(driver);
 		
-		//navigate to organization
+		
 		home.getOrgLink().click();
 		orgPage.getCreateBtn().click();
 		
-		//create orgName
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Organization page");
 		createOrg.createOrg(OrgName, Industry, Type);
 		Thread.sleep(2000);
 		
-		//navigate to contacts
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Contacts page");
 		home.getContactLink().click();
 		contact.getCreateBtn().click();
 		createContact.createContact(LastName);
@@ -83,18 +86,18 @@ public class CreateInvoiceTest extends BaseClass {
 		createContact.switchToOrgInContact(driver, OrgName);
 		createContact.saveContact();
 		
-		//navigate to products and create new product
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Products page and create new product");
 		home.getProductLink().click();
 		product.getCreateProduct().click();
 		createProduct.createProduct(Product, ProdUnit);
 		Thread.sleep(2000);
 		
-		//navigate to vendor and create new vendor 
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Vendors page and create new vendor");
 		home.naviagteToVendor(driver);
 		vendor.getCreateBtn().click();
 		createVendor.createVendor(Vendor, Pin);
 		
-	    //navigate PO tab and create PO
+		UtilityClassObject.getTest().log(Status.INFO,"Navigate to the PO page and create new PO");
 		home.navigateToPO(driver);
 		purchase.getCreatePOBtn().click();
 		createPO.createPO(POSubject);
@@ -115,7 +118,7 @@ public class CreateInvoiceTest extends BaseClass {
 		createPO.savePO(Prod_Qty);
 	    String PONum=poInfo.getVerifyPONum().getText();
 	    
-		//navigate to invoice tab
+	    UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Invoice page and create new Invoice");
 		home.navigateToInvoice(driver);
 		invoice.getCreateInoviceBtn().click();
 		createInvoice.createInvoice(InvoiceSub);
@@ -139,11 +142,9 @@ public class CreateInvoiceTest extends BaseClass {
 		//switch back to invoice page
 		createInvoice.saveInvoice(Inv_Qty);
 		
-		//verify the header info in Invoice
+		UtilityClassObject.getTest().log(Status.PASS,"Verify the header info data with new created Invoice Subject");
 		String actInvoice=invoiceInfo.getHeaderMsg().getText();
 		Assert.assertEquals(actInvoice.contains(InvoiceSub), true);
 		
-//		String InvoiceNo = invoiceInfo.getInvoiceNoEdt().getText();
-//		System.out.println("New InvoiceNo " + InvoiceNo + " is created");
 	}
 }

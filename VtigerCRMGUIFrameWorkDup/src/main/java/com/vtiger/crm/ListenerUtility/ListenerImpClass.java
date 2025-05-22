@@ -1,6 +1,5 @@
 package com.vtiger.crm.ListenerUtility;
 
-import java.io.IOException;
 import java.util.Date;
 
 import org.openqa.selenium.OutputType;

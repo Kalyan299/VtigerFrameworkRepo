@@ -1,39 +1,22 @@
 package com.vtiger.crm.OrgTest;
 
-import java.util.Properties;
-import java.util.Random;
-
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
 import com.vtiger.crm.ListenerUtility.ListenerImpClass;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateOrganizationPage;
-import com.vtiger.crm.ObjectRepositoryUtility.HomePage;
-import com.vtiger.crm.ObjectRepositoryUtility.LoginPage;
 import com.vtiger.crm.ObjectRepositoryUtility.OrganizationInfoPage;
 import com.vtiger.crm.ObjectRepositoryUtility.OrganizationPage;
 import com.vtiger.crm.generic.BaseUtility.BaseClass;
-import com.vtiger.crm.generic.fileutility.ExcelUtility;
-import com.vtiger.crm.generic.fileutility.FileUtility;
-import com.vtiger.crm.generic.webdriverutility.JavaUtlity;
 import com.vtiger.crm.generic.webdriverutility.UtilityClassObject;
-import com.vtiger.crm.generic.webdriverutility.WebDriverUtility;
+@Listeners(ListenerImpClass.class)
 public class CreateOrgTest extends BaseClass {
-
-	@Test
+	
+	@Test(groups={"Smoke_Test"})
     public void createOrg() throws Exception{
-		//read test script data from excel
+		
 		UtilityClassObject.getTest().log(Status.INFO,"Read data from the excel");
 		String OrgName=excel.getDataFromExcelFile("Org", 1, 2)+ java.getRandomNumber();
 		
@@ -50,13 +33,12 @@ public class CreateOrgTest extends BaseClass {
 		createOrg.createOrg(OrgName);
         Thread.sleep(2000);
         UtilityClassObject.getTest().log(Status.PASS,"Verify the header info data with new created Org Name");
-        //verify header info data
 		String hexp=orgInfo.getHeaderMsg().getText();
 		Assert.assertEquals(hexp.contains(OrgName), true);
 		Reporter.log(OrgName+" is created & verified ", true);
     }
 	
-	@Test
+	@Test(groups={"Regression_Test"})
 	public void createOrgWithIndustryTypeTest() throws Exception {
 		// read test script data from excel
 		UtilityClassObject.getTest().log(Status.INFO,"Read data from the excel");
@@ -90,7 +72,8 @@ public class CreateOrgTest extends BaseClass {
 		Assert.assertEquals(actType.contains(Type), true);
        //Reporter.log(Type + " is created & verified ", true);
 	}
-	@Test
+	
+	@Test(groups={"Regression_Test"})
 	public void createOrgWithPhoneNumberTest() throws Exception {
 		// read test script data from excel
 		UtilityClassObject.getTest().log(Status.INFO,"Read data from the excel");

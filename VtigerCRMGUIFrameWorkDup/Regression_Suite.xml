@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<groups>
+  <run>
+    <include name="Regression_Test"></include>
+  </run>
+</groups>
+
+<listeners>
+<listener class-name="com.vtiger.crm.ListenerUtility.ListenerImpClass"/>
+</listeners>
+
+  <test thread-count="5" name="RegressionTest">
+    <classes>
+      <class name="com.vtiger.crm.ServicesTest.CreateServicesTest"/>
+      <class name="com.vtiger.crm.OpportunityTest.CreateOpportunityTest"/>
+      <class name="com.vtiger.crm.ContactTest.CreateContactTest"/>
+      <class name="com.vtiger.crm.OrgTest.CreateOrgTest"/>
+      <class name="com.vtiger.crm.InvoiceTest.CreateInvoiceTest"/>
+      <class name="com.vtiger.crm.PurchaseOrderTest.CreatePOTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

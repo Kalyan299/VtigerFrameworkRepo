@@ -1,34 +1,22 @@
 package com.vtiger.crm.ContactTest;
 
-
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
+import com.vtiger.crm.ListenerUtility.ListenerImpClass;
 import com.vtiger.crm.ObjectRepositoryUtility.ContactsInfoPage;
 import com.vtiger.crm.ObjectRepositoryUtility.ContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateOrganizationPage;
-import com.vtiger.crm.ObjectRepositoryUtility.HomePage;
-import com.vtiger.crm.ObjectRepositoryUtility.LoginPage;
 import com.vtiger.crm.ObjectRepositoryUtility.OrganizationPage;
 import com.vtiger.crm.generic.BaseUtility.BaseClass;
-import com.vtiger.crm.generic.fileutility.ExcelUtility;
-import com.vtiger.crm.generic.fileutility.FileUtility;
-import com.vtiger.crm.generic.webdriverutility.JavaUtlity;
 import com.vtiger.crm.generic.webdriverutility.UtilityClassObject;
-import com.vtiger.crm.generic.webdriverutility.WebDriverUtility;
+
+@Listeners(ListenerImpClass.class)
 public class CreateContactTest extends BaseClass {
-	@Test
+	
+	@Test(groups={"Smoke_Test"})
 	public void createContact() throws Exception {
         UtilityClassObject.getTest().log(Status.INFO, "Read the data from excel");
 		// read test script data from excel
@@ -50,7 +38,7 @@ public class CreateContactTest extends BaseClass {
 		Assert.assertEquals(actLastName.contains(LastName), true);
 	}
 	
-	@Test
+	@Test(groups={"Regression_Test"})
 	public void createConatctWithSupportedDateTest() throws Exception {
 		ContactsPage contactPage = new ContactsPage(driver);
 		CreateContactsPage createContact = new CreateContactsPage(driver);
@@ -82,7 +70,7 @@ public class CreateContactTest extends BaseClass {
 		Assert.assertEquals(actEndDate.contains(EndDate), true);
 	}
 	
-	@Test
+	@Test(groups={"Regression_Test"})
     public void createContactWithOrgTest() throws Exception
     {
 		UtilityClassObject.getTest().log(Status.INFO, "Read the data from excel");

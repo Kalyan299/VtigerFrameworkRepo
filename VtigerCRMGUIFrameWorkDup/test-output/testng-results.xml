@@ -1,65 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Installation of ABBDrivers_212 is created and verified]]>
+    </line>
+    <line>
+      <![CDATA[SeniorAnalyst_657 is verified and displayed in Opporunities main page]]>
+    </line>
+    <line>
+      <![CDATA[JSW_CEMENT_517 is created & verified ]]>
+    </line>
+    <line>
+      <![CDATA[Banking is created & verified ]]>
+    </line>
+    <line>
+      <![CDATA[JSW_PAINTS_394 is created & verified ]]>
+    </line>
+    <line>
+      <![CDATA[8792336114 is created & verified ]]>
+    </line>
+    <line>
+      <![CDATA[Supply of DCS System_ is created & verified ]]>
+    </line>
+    <line>
+      <![CDATA[M/s SIEMENS_655 is created & verified in PO page]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-05-09T15:38:27 IST" name="Suite" finished-at="2025-05-09T15:39:55 IST" duration-ms="88452">
+  <suite started-at="2025-05-22T11:03:12 IST" name="Suite" finished-at="2025-05-22T11:08:34 IST" duration-ms="322486">
     <groups>
+      <group name="Regression_Test">
+        <method signature="CreateContactTest.createConatctWithSupportedDateTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" name="createConatctWithSupportedDateTest" class="com.vtiger.crm.ContactTest.CreateContactTest"/>
+        <method signature="CreateContactTest.createContactWithOrgTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" name="createContactWithOrgTest" class="com.vtiger.crm.ContactTest.CreateContactTest"/>
+        <method signature="CreateInvoiceTest.createInvoicewithPO_SO()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" name="createInvoicewithPO_SO" class="com.vtiger.crm.InvoiceTest.CreateInvoiceTest"/>
+        <method signature="CreateOpportunityTest.checkOpportunityNameTest()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" name="checkOpportunityNameTest" class="com.vtiger.crm.OpportunityTest.CreateOpportunityTest"/>
+        <method signature="CreateOrgTest.createOrgWithIndustryTypeTest()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" name="createOrgWithIndustryTypeTest" class="com.vtiger.crm.OrgTest.CreateOrgTest"/>
+        <method signature="CreateOrgTest.createOrgWithPhoneNumberTest()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" name="createOrgWithPhoneNumberTest" class="com.vtiger.crm.OrgTest.CreateOrgTest"/>
+        <method signature="CreatePOTest.createPurchaseOrderTest()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" name="createPurchaseOrderTest" class="com.vtiger.crm.PurchaseOrderTest.CreatePOTest"/>
+        <method signature="CreateServicesTest.createServiceTest()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" name="createServiceTest" class="com.vtiger.crm.ServicesTest.CreateServicesTest"/>
+      </group> <!-- Regression_Test -->
     </groups>
-    <test started-at="2025-05-09T15:38:27 IST" name="Test" finished-at="2025-05-09T15:39:55 IST" duration-ms="88452">
-      <class name="com.vtiger.crm.ContactTest.CreateContactTest">
-        <test-method is-config="true" signature="GetConnectionDB()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:22 IST" name="GetConnectionDB" finished-at="2025-05-09T15:38:27 IST" duration-ms="4705" status="PASS">
+    <test started-at="2025-05-22T11:03:12 IST" name="RegressionTest" finished-at="2025-05-22T11:08:34 IST" duration-ms="322486">
+      <class name="com.vtiger.crm.ServicesTest.CreateServicesTest">
+        <test-method is-config="true" signature="GetConnectionDB()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:07 IST" name="GetConnectionDB" finished-at="2025-05-22T11:03:12 IST" duration-ms="4740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetConnectionDB -->
-        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:27 IST" name="LaunchBrowser" finished-at="2025-05-09T15:38:32 IST" duration-ms="5257" status="PASS">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:12 IST" name="LaunchBrowser" finished-at="2025-05-22T11:03:16 IST" duration-ms="4114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchBrowser -->
-        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:32 IST" name="LoginToApplication" finished-at="2025-05-09T15:38:39 IST" duration-ms="6824" status="PASS">
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:16 IST" name="LoginToApplication" finished-at="2025-05-22T11:03:17 IST" duration-ms="1592" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToApplication -->
-        <test-method signature="createConatctWithSupportedDateTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:39 IST" name="createConatctWithSupportedDateTest" finished-at="2025-05-09T15:38:53 IST" duration-ms="14040" status="PASS">
+        <test-method signature="createServiceTest()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:17 IST" name="createServiceTest" finished-at="2025-05-22T11:03:35 IST" duration-ms="17850" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[Installation of ABBDrivers_212 is created and verified]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- createConatctWithSupportedDateTest -->
-        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:53 IST" name="LogOutApplication" finished-at="2025-05-09T15:38:55 IST" duration-ms="1969" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogOutApplication -->
-        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:55 IST" name="LoginToApplication" finished-at="2025-05-09T15:38:59 IST" duration-ms="3861" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToApplication -->
-        <test-method signature="createContact()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:38:59 IST" name="createContact" finished-at="2025-05-09T15:39:14 IST" duration-ms="15581" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContact -->
-        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:14 IST" name="LogOutApplication" finished-at="2025-05-09T15:39:16 IST" duration-ms="1834" status="PASS">
+        </test-method> <!-- createServiceTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:35 IST" name="LogOutApplication" finished-at="2025-05-22T11:03:37 IST" duration-ms="1802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogOutApplication -->
-        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:16 IST" name="LoginToApplication" finished-at="2025-05-09T15:39:20 IST" duration-ms="3863" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToApplication -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:20 IST" name="createContactWithOrgTest" finished-at="2025-05-09T15:39:53 IST" duration-ms="32519" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:53 IST" name="LogOutApplication" finished-at="2025-05-09T15:39:55 IST" duration-ms="2035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogOutApplication -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:55 IST" name="CloseBrowser" finished-at="2025-05-09T15:39:55 IST" duration-ms="507" status="PASS">
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:03:37 IST" name="CloseBrowser" finished-at="2025-05-22T11:03:38 IST" duration-ms="475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-        <test-method is-config="true" signature="CloseConnection()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@f5958c9]" started-at="2025-05-09T15:39:55 IST" name="CloseConnection" finished-at="2025-05-09T15:39:55 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="CloseConnection()[pri:0, instance:com.vtiger.crm.ServicesTest.CreateServicesTest@3d285d7e]" started-at="2025-05-22T11:08:34 IST" name="CloseConnection" finished-at="2025-05-22T11:08:34 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseConnection -->
+      </class> <!-- com.vtiger.crm.ServicesTest.CreateServicesTest -->
+      <class name="com.vtiger.crm.ContactTest.CreateContactTest">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:15 IST" name="LaunchBrowser" finished-at="2025-05-22T11:04:17 IST" duration-ms="1953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:17 IST" name="LoginToApplication" finished-at="2025-05-22T11:04:19 IST" duration-ms="1400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createConatctWithSupportedDateTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:19 IST" name="createConatctWithSupportedDateTest" finished-at="2025-05-22T11:04:37 IST" duration-ms="17947" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createConatctWithSupportedDateTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:37 IST" name="LogOutApplication" finished-at="2025-05-22T11:04:38 IST" duration-ms="1812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:38 IST" name="LoginToApplication" finished-at="2025-05-22T11:04:42 IST" duration-ms="3555" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:04:42 IST" name="createContactWithOrgTest" finished-at="2025-05-22T11:05:11 IST" duration-ms="28956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactWithOrgTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:05:11 IST" name="LogOutApplication" finished-at="2025-05-22T11:05:13 IST" duration-ms="1739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.ContactTest.CreateContactTest@55fe41ea]" started-at="2025-05-22T11:05:13 IST" name="CloseBrowser" finished-at="2025-05-22T11:05:13 IST" duration-ms="399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
       </class> <!-- com.vtiger.crm.ContactTest.CreateContactTest -->
-    </test> <!-- Test -->
+      <class name="com.vtiger.crm.OpportunityTest.CreateOpportunityTest">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" started-at="2025-05-22T11:03:38 IST" name="LaunchBrowser" finished-at="2025-05-22T11:03:40 IST" duration-ms="2049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" started-at="2025-05-22T11:03:40 IST" name="LoginToApplication" finished-at="2025-05-22T11:03:41 IST" duration-ms="1522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="checkOpportunityNameTest()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" started-at="2025-05-22T11:03:41 IST" name="checkOpportunityNameTest" finished-at="2025-05-22T11:04:13 IST" duration-ms="31656" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[SeniorAnalyst_657 is verified and displayed in Opporunities main page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- checkOpportunityNameTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" started-at="2025-05-22T11:04:13 IST" name="LogOutApplication" finished-at="2025-05-22T11:04:15 IST" duration-ms="2181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.OpportunityTest.CreateOpportunityTest@1c1bbc4e]" started-at="2025-05-22T11:04:15 IST" name="CloseBrowser" finished-at="2025-05-22T11:04:15 IST" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.vtiger.crm.OpportunityTest.CreateOpportunityTest -->
+      <class name="com.vtiger.crm.OrgTest.CreateOrgTest">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:13 IST" name="LaunchBrowser" finished-at="2025-05-22T11:05:16 IST" duration-ms="2396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:16 IST" name="LoginToApplication" finished-at="2025-05-22T11:05:17 IST" duration-ms="1620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createOrgWithIndustryTypeTest()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:17 IST" name="createOrgWithIndustryTypeTest" finished-at="2025-05-22T11:05:36 IST" duration-ms="18625" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[JSW_CEMENT_517 is created & verified ]]>
+            </line>
+            <line>
+              <![CDATA[Banking is created & verified ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createOrgWithIndustryTypeTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:36 IST" name="LogOutApplication" finished-at="2025-05-22T11:05:38 IST" duration-ms="1840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:38 IST" name="LoginToApplication" finished-at="2025-05-22T11:05:39 IST" duration-ms="1018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createOrgWithPhoneNumberTest()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:39 IST" name="createOrgWithPhoneNumberTest" finished-at="2025-05-22T11:05:55 IST" duration-ms="15853" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[JSW_PAINTS_394 is created & verified ]]>
+            </line>
+            <line>
+              <![CDATA[8792336114 is created & verified ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createOrgWithPhoneNumberTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:55 IST" name="LogOutApplication" finished-at="2025-05-22T11:05:56 IST" duration-ms="1749" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.OrgTest.CreateOrgTest@fbd1f6]" started-at="2025-05-22T11:05:56 IST" name="CloseBrowser" finished-at="2025-05-22T11:05:57 IST" duration-ms="396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.vtiger.crm.OrgTest.CreateOrgTest -->
+      <class name="com.vtiger.crm.PurchaseOrderTest.CreatePOTest">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" started-at="2025-05-22T11:07:33 IST" name="LaunchBrowser" finished-at="2025-05-22T11:07:36 IST" duration-ms="2739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" started-at="2025-05-22T11:07:36 IST" name="LoginToApplication" finished-at="2025-05-22T11:07:37 IST" duration-ms="1384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createPurchaseOrderTest()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" started-at="2025-05-22T11:07:37 IST" name="createPurchaseOrderTest" finished-at="2025-05-22T11:08:32 IST" duration-ms="54899" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Supply of DCS System_ is created & verified ]]>
+            </line>
+            <line>
+              <![CDATA[M/s SIEMENS_655 is created & verified in PO page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createPurchaseOrderTest -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" started-at="2025-05-22T11:08:32 IST" name="LogOutApplication" finished-at="2025-05-22T11:08:34 IST" duration-ms="1740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.PurchaseOrderTest.CreatePOTest@5dda768f]" started-at="2025-05-22T11:08:34 IST" name="CloseBrowser" finished-at="2025-05-22T11:08:34 IST" duration-ms="432" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.vtiger.crm.PurchaseOrderTest.CreatePOTest -->
+      <class name="com.vtiger.crm.InvoiceTest.CreateInvoiceTest">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" started-at="2025-05-22T11:05:57 IST" name="LaunchBrowser" finished-at="2025-05-22T11:05:59 IST" duration-ms="2687" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="LoginToApplication()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" started-at="2025-05-22T11:05:59 IST" name="LoginToApplication" finished-at="2025-05-22T11:06:01 IST" duration-ms="1427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToApplication -->
+        <test-method signature="createInvoicewithPO_SO()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" started-at="2025-05-22T11:06:01 IST" name="createInvoicewithPO_SO" finished-at="2025-05-22T11:07:31 IST" duration-ms="89844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createInvoicewithPO_SO -->
+        <test-method is-config="true" signature="LogOutApplication()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" started-at="2025-05-22T11:07:31 IST" name="LogOutApplication" finished-at="2025-05-22T11:07:32 IST" duration-ms="1813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOutApplication -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.vtiger.crm.InvoiceTest.CreateInvoiceTest@1ce24091]" started-at="2025-05-22T11:07:32 IST" name="CloseBrowser" finished-at="2025-05-22T11:07:33 IST" duration-ms="438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.vtiger.crm.InvoiceTest.CreateInvoiceTest -->
+    </test> <!-- RegressionTest -->
   </suite> <!-- Suite -->
 </testng-results>

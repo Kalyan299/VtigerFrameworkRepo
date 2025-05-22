@@ -22,6 +22,7 @@ import com.vtiger.crm.generic.databaseutility.DataBaseUtility;
 import com.vtiger.crm.generic.fileutility.ExcelUtility;
 import com.vtiger.crm.generic.fileutility.FileUtility;
 import com.vtiger.crm.generic.webdriverutility.JavaUtlity;
+import com.vtiger.crm.generic.webdriverutility.UtilityClassObject;
 import com.vtiger.crm.generic.webdriverutility.WebDriverUtility;
 
 public class BaseClass{
@@ -40,18 +41,18 @@ public LoginPage login;
 public static WebDriver sdriver;
 
 	
-	@BeforeSuite
+	@BeforeSuite(groups= {"Smoke_Test","Regression_Test"})
 	public void GetConnectionDB() throws Exception
 	{
 		System.out.println("Connect to DB");
 		dB.getdBConnection(url, username, password);
 	}
 	
-	@BeforeClass
+	@BeforeClass(groups= {"Smoke_Test","Regression_Test"})
 	public void LaunchBrowser() throws Exception 
 	{
 	String Browser = file.getDatafromPropertiesFile("browser");
-	
+	  
 		if(Browser.equals("chrome")) {
 			driver= new ChromeDriver();}
 		else if(Browser.equals("firefox")) {
@@ -60,24 +61,27 @@ public static WebDriver sdriver;
 			driver=new EdgeDriver();}
 		else {
 			driver= new ChromeDriver();}
+		UtilityClassObject.setDriver(driver);
+		web.waitForImplicit(driver);
 		web.maximize(driver);
 		sdriver=driver;
+		
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(groups= {"Smoke_Test","Regression_Test"})
 	public void LoginToApplication() throws Exception 
 	{
 		home=new HomePage(driver);
+		web.waitForImplicit(driver);
 	    login=new LoginPage(driver);
 		String Url = file.getDatafromPropertiesFile("url");
 		String Username = file.getDatafromPropertiesFile("username");
 		String Password = file.getDatafromPropertiesFile("password");
 		driver.get(Url);
-		web.waitForImplicit(driver);
 		login.loginApp(Username, Password);
 	}
 	
-	@AfterMethod
+	@AfterMethod(groups= {"Smoke_Test","Regression_Test"})
 	public void LogOutApplication() 
 	{
 		web.waitForImplicit(driver);
@@ -85,14 +89,14 @@ public static WebDriver sdriver;
 		home.signOut(driver);
 	}
 	
-	@AfterClass
+	@AfterClass(groups= {"Smoke_Test","Regression_Test"})
 	public void CloseBrowser() 
 	{
 		web.waitForImplicit(driver);
 		driver.quit();
 	}
 	
-	@AfterSuite
+	@AfterSuite(groups= {"Smoke_Test","Regression_Test"})
 	public void CloseConnection() 
 	{
 		System.out.println("--Close dB--");

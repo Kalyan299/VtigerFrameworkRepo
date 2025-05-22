@@ -5,8 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import com.vtiger.crm.generic.webdriverutility.WebDriverUtility;
 
+public class LoginPage {
 
 	public LoginPage(WebDriver driver)
 	{
@@ -18,7 +19,7 @@ public class LoginPage {
 	@FindBy(name="user_password")private WebElement PasswordEdt;
 	
 	@FindBy(id="submitButton")private WebElement loginBtn;
-	//Object Encapsulation
+
 	public WebElement getUserNameEdt() {
 		return UserNameEdt;
 	}
@@ -32,7 +33,6 @@ public class LoginPage {
 	}
 	//Object Utilization and provide action
 	public void loginApp(String Username, String Password) {
-		
 		UserNameEdt.sendKeys(Username);
 		PasswordEdt.sendKeys(Password);
 		loginBtn.click();

@@ -1,37 +1,31 @@
 package com.vtiger.crm.PurchaseOrderTest;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+import com.vtiger.crm.ListenerUtility.ListenerImpClass;
 import com.vtiger.crm.ObjectRepositoryUtility.ContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateContactsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateProductPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreatePurchaseOrderPage;
 import com.vtiger.crm.ObjectRepositoryUtility.CreateVendorPage;
-import com.vtiger.crm.ObjectRepositoryUtility.HomePage;
-import com.vtiger.crm.ObjectRepositoryUtility.LoginPage;
 import com.vtiger.crm.ObjectRepositoryUtility.ProductsPage;
 import com.vtiger.crm.ObjectRepositoryUtility.PurchaseOrderInfoPage;
 import com.vtiger.crm.ObjectRepositoryUtility.PurchaseOrderPage;
 import com.vtiger.crm.ObjectRepositoryUtility.VendorsPage;
 import com.vtiger.crm.generic.BaseUtility.BaseClass;
-import com.vtiger.crm.generic.fileutility.ExcelUtility;
-import com.vtiger.crm.generic.fileutility.FileUtility;
-import com.vtiger.crm.generic.webdriverutility.JavaUtlity;
-import com.vtiger.crm.generic.webdriverutility.WebDriverUtility;
-
+import com.vtiger.crm.generic.webdriverutility.UtilityClassObject;
+@Listeners(ListenerImpClass.class)
 public class CreatePOTest extends BaseClass{
-	@Test
+	@Test(groups={"Regression_Test"})
 	public void createPurchaseOrderTest() throws Exception{
 	
-	//get data from excel
+    UtilityClassObject.getTest().log(Status.INFO,"Read data from the excel");
 	String LastName=excel.getDataFromExcelFile("Contacts", 1, 2)+java.getRandomNumber();
 	String Product=excel.getDataFromExcelFile("PurchaseOrder", 1, 7)+java.getRandomNumber();
 	String P_unitPrice=excel.getDataFromExcelFile("PurchaseOrder", 1, 8);
@@ -52,24 +46,24 @@ public class CreatePOTest extends BaseClass{
 	CreatePurchaseOrderPage createPO=new CreatePurchaseOrderPage(driver);
 	PurchaseOrderInfoPage prodInfo=new PurchaseOrderInfoPage(driver);
 	
-	//navigate to contacts tab
+	
 	home.getContactLink().click();
 	contact.getCreateBtn().click();
 	createContact.createContact(LastName);
 	createContact.saveContact();
 	
-    //navigate to products tab
+	UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Products page");
 	home.getProductLink().click();
 	product.getCreateProduct().click();
 	createProduct.createProduct(Product, P_unitPrice);
 	Thread.sleep(2000);
 	
-	//navigate to vendors tab
+	UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Vendors page");
 	home.naviagteToVendor(driver);
 	vendor.getCreateBtn().click();
 	createVendor.createVendor(Vendor, Pin);
 	
-	//navigate to Purchase order tab
+	UtilityClassObject.getTest().log(Status.INFO,"Navigate to the Purchase order page");
 	home.navigateToPO(driver);
 	purchase.getCreatePOBtn().click();
 	createPO.createPO(POSubject);
@@ -89,12 +83,12 @@ public class CreatePOTest extends BaseClass{
 	createPO.createPO(Billing, Shipping);
     createPO.savePO(Qty);
     
-	//verify header info with PO
+    UtilityClassObject.getTest().log(Status.PASS,"Verify the header info data with new created Org Name");
     String actPO=prodInfo.getHeaderMsg().getText();
     Assert.assertEquals(actPO.contains(POSubject), true);
 	Reporter.log(POSubject+" is created & verified ", true);
 	
-	//verify vendor info
+	UtilityClassObject.getTest().log(Status.PASS,"Verify the vendor info data in PO page");
 	String actVendor=prodInfo.getVerifyVendor().getText();
 	Assert.assertEquals(actVendor.contains(Vendor), true);
 	Reporter.log(Vendor+" is created & verified in PO page", true);
