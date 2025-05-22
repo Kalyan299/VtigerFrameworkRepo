@@ -2,6 +2,7 @@ package com.vtiger.crm.ListenerUtility;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+import org.testng.annotations.Test;
 
 public class RetryListenerImp implements IRetryAnalyzer{
 
@@ -16,4 +17,8 @@ public class RetryListenerImp implements IRetryAnalyzer{
 		return false;
 	}
 
+	@Test
+	public void onTest() {
+		System.out.println("execute");
+	}
 }
