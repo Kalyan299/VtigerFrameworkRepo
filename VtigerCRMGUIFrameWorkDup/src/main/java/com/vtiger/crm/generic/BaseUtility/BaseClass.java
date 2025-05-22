@@ -13,9 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.vtiger.crm.ObjectRepositoryUtility.HomePage;
 import com.vtiger.crm.ObjectRepositoryUtility.LoginPage;
 import com.vtiger.crm.generic.databaseutility.DataBaseUtility;
@@ -75,8 +72,8 @@ public static WebDriver sdriver;
 		web.waitForImplicit(driver);
 	    login=new LoginPage(driver);
 		String Url = file.getDatafromPropertiesFile("url");
-		String Username = file.getDatafromPropertiesFile("username");
-		String Password = file.getDatafromPropertiesFile("password");
+		String Username = System.getProperty("username");
+		String Password = System.getProperty("password");
 		driver.get(Url);
 		login.loginApp(Username, Password);
 	}
